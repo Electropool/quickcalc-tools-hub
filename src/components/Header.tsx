@@ -9,7 +9,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors">
             <Calculator className="h-8 w-8" />
-            <span className="text-xl font-bold">QuickCalc Tools</span>
+            <span className="text-xl font-bold">Utilitix</span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
