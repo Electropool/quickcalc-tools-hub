@@ -3,78 +3,110 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const conversionTools = [
+const measurementTools = [
   {
     title: "Length/Distance Converter",
     description: "Convert between meters, feet, inches, kilometers and more",
     path: "/length",
     icon: "📏",
-    color: "bg-blue-500 hover:bg-blue-600"
   },
   {
     title: "Area Converter", 
     description: "Convert square meters, acres, hectares and more",
     path: "/area",
     icon: "📐",
-    color: "bg-green-500 hover:bg-green-600"
   },
   {
     title: "Volume Converter",
     description: "Convert liters, gallons, cubic meters and more", 
     path: "/volume",
     icon: "🥤",
-    color: "bg-purple-500 hover:bg-purple-600"
   },
+  {
+    title: "Micro/Small Length Converter",
+    description: "Convert nanometers, micrometers, angstroms and more",
+    path: "/micro-length",
+    icon: "🔬",
+  },
+];
+
+const scienceMathTools = [
   {
     title: "Weight/Mass Converter",
     description: "Convert kilograms, pounds, ounces and more",
     path: "/weight", 
     icon: "⚖️",
-    color: "bg-orange-500 hover:bg-orange-600"
   },
   {
     title: "Temperature Converter",
     description: "Convert Celsius, Fahrenheit, Kelvin and more",
     path: "/temperature",
     icon: "🌡️", 
-    color: "bg-red-500 hover:bg-red-600"
-  },
-  {
-    title: "Currency Converter",
-    description: "Convert between different world currencies",
-    path: "/currency",
-    icon: "💱",
-    color: "bg-yellow-500 hover:bg-yellow-600"
   },
   {
     title: "Number System Converter", 
     description: "Convert Binary, Decimal, Hexadecimal, BCD",
     path: "/number-system",
     icon: "💻",
-    color: "bg-indigo-500 hover:bg-indigo-600"
   },
+];
+
+const techDataTools = [
   {
-    title: "Time Converter",
-    description: "Convert seconds, minutes, hours, days and more",
-    path: "/time",
-    icon: "⏰",
-    color: "bg-pink-500 hover:bg-pink-600"
+    title: "Data Storage Converter",
+    description: "Convert bytes, KB, MB, GB, TB and more", 
+    path: "/data-storage",
+    icon: "💾",
   },
   {
     title: "Speed Converter", 
     description: "Convert mph, km/h, m/s and more",
     path: "/speed",
     icon: "🚀",
-    color: "bg-teal-500 hover:bg-teal-600"
   },
   {
-    title: "Data Storage Converter",
-    description: "Convert bytes, KB, MB, GB, TB and more", 
-    path: "/data-storage",
-    icon: "💾",
-    color: "bg-gray-500 hover:bg-gray-600"
-  }
+    title: "Time Converter",
+    description: "Convert seconds, minutes, hours, days and more",
+    path: "/time",
+    icon: "⏰",
+  },
 ];
+
+const comingSoonTools = [
+  {
+    title: "Currency Converter",
+    description: "Convert between different world currencies",
+    path: "/currency",
+    icon: "💱",
+  },
+];
+
+const ToolCategory = ({ title, tools, bgColor }: { title: string; tools: any[]; bgColor: string }) => (
+  <div className="mb-12">
+    <h2 className={`text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 ${bgColor}`}>
+      {title}
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {tools.map((tool, index) => (
+        <Link
+          key={index}
+          to={tool.path}
+          className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 border border-gray-200 hover:border-blue-300"
+        >
+          <div className="text-center">
+            <div className="text-4xl mb-4">{tool.icon}</div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+              {tool.title}
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              {tool.description}
+            </p>
+          </div>
+        </Link>
+      ))}
+    </div>
+  </div>
+);
 
 const Index = () => {
   return (
@@ -100,25 +132,29 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {conversionTools.map((tool, index) => (
-            <Link
-              key={index}
-              to={tool.path}
-              className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 border border-gray-200 hover:border-blue-300"
-            >
-              <div className="text-center">
-                <div className="text-4xl mb-4">{tool.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                  {tool.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {tool.description}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <ToolCategory 
+          title="📏 Measurements & Dimensions" 
+          tools={measurementTools} 
+          bgColor="border-blue-500" 
+        />
+        
+        <ToolCategory 
+          title="🧪 Science & Mathematics" 
+          tools={scienceMathTools} 
+          bgColor="border-green-500" 
+        />
+        
+        <ToolCategory 
+          title="💻 Technology & Data" 
+          tools={techDataTools} 
+          bgColor="border-purple-500" 
+        />
+        
+        <ToolCategory 
+          title="🚧 Coming Soon" 
+          tools={comingSoonTools} 
+          bgColor="border-yellow-500" 
+        />
 
         <div className="text-center mt-12">
           <div className="bg-blue-50 rounded-lg p-8">

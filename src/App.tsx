@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,6 +7,14 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import LengthConverter from "./pages/LengthConverter";
 import TemperatureConverter from "./pages/TemperatureConverter";
+import VolumeConverter from "./pages/VolumeConverter";
+import WeightConverter from "./pages/WeightConverter";
+import NumberSystemConverter from "./pages/NumberSystemConverter";
+import TimeConverter from "./pages/TimeConverter";
+import SpeedConverter from "./pages/SpeedConverter";
+import DataStorageConverter from "./pages/DataStorageConverter";
+import MicroLengthConverter from "./pages/MicroLengthConverter";
+import AreaConverter from "./pages/AreaConverter";
 import ComingSoon from "./pages/ComingSoon";
 import InfoPage from "./pages/InfoPage";
 
@@ -21,18 +28,26 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          
+          {/* Fully Functional Converters */}
           <Route path="/length" element={<LengthConverter />} />
           <Route path="/temperature" element={<TemperatureConverter />} />
+          <Route path="/volume" element={<VolumeConverter />} />
+          <Route path="/weight" element={<WeightConverter />} />
+          <Route path="/number-system" element={<NumberSystemConverter />} />
+          <Route path="/time" element={<TimeConverter />} />
+          <Route path="/speed" element={<SpeedConverter />} />
+          <Route path="/data-storage" element={<DataStorageConverter />} />
+          <Route path="/micro-length" element={<MicroLengthConverter />} />
+          <Route path="/area" element={<AreaConverter />} />
           
           {/* Coming Soon Pages */}
-          <Route path="/area" element={<ComingSoon title="Area Converter" description="Convert square meters, acres, hectares and more" />} />
-          <Route path="/volume" element={<ComingSoon title="Volume Converter" description="Convert liters, gallons, cubic meters and more" />} />
-          <Route path="/weight" element={<ComingSoon title="Weight/Mass Converter" description="Convert kilograms, pounds, ounces and more" />} />
-          <Route path="/currency" element={<ComingSoon title="Currency Converter" description="Convert between different world currencies" />} />
-          <Route path="/number-system" element={<ComingSoon title="Number System Converter" description="Convert Binary, Decimal, Hexadecimal, BCD" />} />
-          <Route path="/time" element={<ComingSoon title="Time Converter" description="Convert seconds, minutes, hours, days and more" />} />
-          <Route path="/speed" element={<ComingSoon title="Speed Converter" description="Convert mph, km/h, m/s and more" />} />
-          <Route path="/data-storage" element={<ComingSoon title="Data Storage Converter" description="Convert bytes, KB, MB, GB, TB and more" />} />
+          <Route path="/currency" element={
+            <ComingSoon 
+              title="Currency Converter" 
+              description="Currency values change daily and require live data from APIs. This feature will be added soon." 
+            />
+          } />
           
           {/* Info Pages */}
           <Route path="/about" element={
