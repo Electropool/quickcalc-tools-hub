@@ -85,7 +85,7 @@ const Index = () => {
       <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
           <p className="text-gray-500 font-medium">Top Banner Ad Placement</p>
-          <!-- Place Ad Code Here -->
+          {/* Place Ad Code Here */}
         </div>
       </div>
 

@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Header from "./Header";
@@ -44,7 +43,7 @@ const ConverterLayout = ({ title, description, children }: ConverterLayoutProps)
             <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center sticky top-24">
               <p className="text-gray-500 font-medium mb-2">Sidebar Ad</p>
               <p className="text-sm text-gray-400">300x600</p>
-              <!-- Place Ad Code Here -->
+              {/* Place Ad Code Here */}
             </div>
           </div>
         </div>
