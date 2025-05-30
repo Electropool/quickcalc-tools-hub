@@ -17,6 +17,13 @@ import MicroLengthConverter from "./pages/MicroLengthConverter";
 import AreaConverter from "./pages/AreaConverter";
 import ComingSoon from "./pages/ComingSoon";
 import InfoPage from "./pages/InfoPage";
+import EngineerTools from "./pages/EngineerTools";
+import ASCIIConverter from "./pages/ASCIIConverter";
+import OhmsLaw from "./pages/OhmsLaw";
+import ResistorCalculator from "./pages/ResistorCalculator";
+import FrequencyConverter from "./pages/FrequencyConverter";
+import CapacitorCalculator from "./pages/CapacitorCalculator";
+import PWMCalculator from "./pages/PWMCalculator";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +47,15 @@ const App = () => (
           <Route path="/data-storage" element={<DataStorageConverter />} />
           <Route path="/micro-length" element={<MicroLengthConverter />} />
           <Route path="/area" element={<AreaConverter />} />
+          
+          {/* Engineer Tools */}
+          <Route path="/engineer-tools" element={<EngineerTools />} />
+          <Route path="/ascii-converter" element={<ASCIIConverter />} />
+          <Route path="/ohms-law" element={<OhmsLaw />} />
+          <Route path="/resistor-calculator" element={<ResistorCalculator />} />
+          <Route path="/frequency-converter" element={<FrequencyConverter />} />
+          <Route path="/capacitor-calculator" element={<CapacitorCalculator />} />
+          <Route path="/pwm-calculator" element={<PWMCalculator />} />
           
           {/* Coming Soon Pages */}
           <Route path="/currency" element={

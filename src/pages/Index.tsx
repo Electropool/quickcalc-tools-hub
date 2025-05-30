@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -69,6 +68,15 @@ const techDataTools = [
     description: "Convert seconds, minutes, hours, days and more",
     path: "/time",
     icon: "⏰",
+  },
+];
+
+const engineerTools = [
+  {
+    title: "Engineer Tools",
+    description: "ASCII, Binary, Converters & Electronic Engineering Tools",
+    path: "/engineer-tools",
+    icon: "🔧",
   },
 ];
 
@@ -148,6 +156,12 @@ const Index = () => {
           title="💻 Technology & Data" 
           tools={techDataTools} 
           bgColor="border-purple-500" 
+        />
+
+        <ToolCategory 
+          title="🔧 Engineering Tools" 
+          tools={engineerTools} 
+          bgColor="border-violet-500" 
         />
         
         <ToolCategory 
